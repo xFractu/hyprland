@@ -36,7 +36,7 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal    = "kitty"
-local fileManager = "thunar"
+local fileManager = "kitty yazi"
 local menu = "wofi"
 
 
@@ -49,11 +49,13 @@ local menu = "wofi"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
--- hl.on("hyprland.start", function () 
+hl.on("hyprland.start", function () 
 --   hl.exec_cmd(terminal)
 --   hl.exec_cmd("nm-applet")
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
--- end)
+   hl.exec_cmd("hyprpaper")
+   hl.exec_cmd("waybar")
+end)
 
 
 -------------------------------
@@ -116,8 +118,8 @@ hl.config({
         rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
-        active_opacity   = 1.0,
-        inactive_opacity = 1.0,
+        active_opacity   = 0.9,
+        inactive_opacity = 0.5,
 
         shadow = {
             enabled      = true,
@@ -270,6 +272,21 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
+
+-- Navegador FireFox
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("firefox"))
+
+-- Captura de un área al portapapeles
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd('grim -g "$(slurp)" - | wl-copy'))
+
+-- Captura de un área a archivo
+hl.bind(mainMod .. " + CTRL + P", hl.dsp.exec_cmd('grim -g "$(slurp)" ~/Pictures/captura-$(date +%s).png'))
+
+-- Explorador gráfico (Thunar)
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("thunar"))
+
+-- Editor en terminal
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty nvim"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
