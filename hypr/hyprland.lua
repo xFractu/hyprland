@@ -100,9 +100,9 @@ hl.config({
         border_size = 2,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
-        },
+	   active_border   = { colors = {"rgb(89b4fa)", "rgb(cba6f7)"}, angle = 45 },
+    	   inactive_border = "rgb(45475a)",
+	},
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false,
@@ -119,7 +119,9 @@ hl.config({
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 0.9,
-        inactive_opacity = 0.5,
+        inactive_opacity = 0.75,
+        dim_inactive     = true,
+        dim_strength     = 0.15,
 
         shadow = {
             enabled      = true,
@@ -377,4 +379,10 @@ hl.window_rule({
 
     move  = "20 monitor_h-120",
     float = true,
+})
+
+hl.window_rule({
+    name  = "firefox-opacity",
+    match = { class = "^firefox$" },
+    opacity = "1.0 0.85",
 })
