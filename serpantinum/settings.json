@@ -1,0 +1,170 @@
+{
+  "general": {
+    "language": "es",
+    "avatarPath": "",
+    "muteSfx": false,
+    "weatherInterval": 15,
+    "weatherUnit": "metric",
+    "location": {
+      "ip": "2806:2f0:7580:f1bb:fc39:42e1:484:3941",
+      "latitude": 19.42847,
+      "longitude": -99.12761,
+      "city": "Mexico City",
+      "region": "Mexico City",
+      "region_code": "CMX",
+      "country_name": "Mexico",
+      "country_code": "MX",
+      "postal": "07839",
+      "timezone": "America/Mexico_City",
+      "utc_offset": "-0600",
+      "currency": "MXN",
+      "languages": "es-MX",
+      "asn": "AS17072",
+      "org": "TOTAL PLAY TELECOMUNICACIONES, S.A.P.I. DE C.V.",
+      "source": "ipapi.co",
+      "updated_at": 1791132231
+    }
+  },
+  "syspanel": {
+    "clipExpandProgress": 0,
+    "clipExpanded": false,
+    "clipState": 1
+  },
+  "bar": {
+    "position": "top",
+    "width": 100,
+    "opacity": 100,
+    "style": "modular",
+    "time": {
+      "format": "HH:mm:ss"
+    },
+    "autohide": false,
+    "autohideTimeout": 1000,
+    "modules": {
+      "left": [
+        "left",
+        "workspaces",
+        "media"
+      ],
+      "center": [
+        [
+          "timedate",
+          "info",
+          "weather"
+        ]
+      ],
+      "right": [
+        "kb",
+        "tray",
+        [
+          "wifi",
+          "bt",
+          "vol",
+          "bat"
+        ]
+      ]
+    },
+    "distinctPills": false,
+    "groupColors": {
+      "g_timedate": "#ffb785",
+      "g_kb": "#47491f"
+    }
+  },
+  "theme": {
+    "fontFamily": "Adwaita Mono",
+    "borderRadius": 10,
+    "activePreset": "Titanium",
+    "matugen": false,
+    "colors": {
+      "base": "#141619",
+      "blue": "#8fa3b8",
+      "crust": "#08090a",
+      "green": "#9bbd9e",
+      "mantle": "#0e0f11",
+      "maroon": "#bf6b63",
+      "mauve": "#b0a8b8",
+      "overlay0": "#636c7a",
+      "overlay1": "#7c8799",
+      "overlay2": "#96a2b8",
+      "peach": "#a2b5cd",
+      "pink": "#d4b2bd",
+      "red": "#d98880",
+      "sapphire": "#73889c",
+      "subtext0": "#b3b9c2",
+      "subtext1": "#cfd4db",
+      "surface0": "#22262b",
+      "surface1": "#32373e",
+      "surface2": "#434a54",
+      "teal": "#8cb3b0",
+      "text": "#f0f2f5",
+      "yellow": "#d9cb9e"
+    }
+  },
+  "idle": {
+    "enabled": true,
+    "actions": {
+      "dim": {
+        "id": "dim",
+        "timeout": 150,
+        "enabled": true,
+        "respectInhibitors": true,
+        "mprisInhibit": false,
+        "command": "",
+        "resumeCommand": "",
+        "isCustom": false
+      },
+      "dpms": {
+        "id": "dpms",
+        "timeout": 450,
+        "enabled": true,
+        "respectInhibitors": true,
+        "mprisInhibit": false,
+        "command": "",
+        "resumeCommand": "",
+        "isCustom": false
+      },
+      "lock": {
+        "id": "lock",
+        "timeout": 300,
+        "enabled": true,
+        "respectInhibitors": true,
+        "mprisInhibit": false,
+        "command": "",
+        "resumeCommand": "",
+        "isCustom": false
+      },
+      "suspend": {
+        "id": "suspend",
+        "timeout": 600,
+        "enabled": true,
+        "respectInhibitors": true,
+        "mprisInhibit": false,
+        "command": "",
+        "resumeCommand": "",
+        "isCustom": false
+      }
+    },
+    "manualInhibit": true,
+    "caffeineStartTime": 1791132476407,
+    "caffeineEndTime": 1791136076407
+  },
+  "notifications": {
+    "dnd": true,
+    "position": "top right",
+    "sound": true,
+    "soundFile": "/home/fractu/.local/share/serpantinum/src/assets/sounds/notifications/Botanica.wav"
+  },
+  "display": {
+    "monitors": {
+      "eDP-1": {
+        "enabled": false,
+        "scale": 1
+      },
+      "HDMI-A-1": {
+        "enabled": false
+      }
+    }
+  },
+  "wallpaperDir": "/home/fractu/Pictures/Wallpapers"
+}
+
