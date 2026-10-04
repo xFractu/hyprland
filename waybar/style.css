@@ -40,16 +40,27 @@ window#waybar {
 }
 
 /* workspaces con animación */
+
 #workspaces button {
   padding: 0 9px;
   margin: 4px 2px;
   border-radius: 8px;
   color: @muted;
   background: transparent;
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
-#workspaces button:hover { background: @surface; color: @text; }
-#workspaces button.active { background: @accent; color: @bg; }
+
+#workspaces button:hover {
+  background: @surface;
+  color: @text;
+}
+
+#workspaces button.active {
+  background: @accent;
+  color: @bg;
+  padding: 0 18px;
+}
+
 
 /* apps abiertas */
 #taskbar button {

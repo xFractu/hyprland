@@ -25,8 +25,9 @@
   "hyprland/workspaces": {
     "format": "{name}",
     "on-click": "activate",
+    "enable-bar-scroll": true,
     "all-outputs": true,
-    "persistent-workspaces": { "*": [1, 2, 3, 4, 5, 6, 7, 8] }
+    "persistent-workspaces": { "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }
   },
 
   "group/info": {

@@ -391,3 +391,9 @@ hl.window_rule({
     match = { class = "^firefox$" },
     opacity = "1.0 0.85",
 })
+
+-- animacion de workspaces (deslizar)
+hl.curve("slideCurve", { type = "bezier", points = { {0.25, 1}, {0.5, 1} } })
+hl.animation({ leaf = "workspaces",    enabled = true, speed = 4, bezier = "slideCurve", style = "slide" })
+hl.animation({ leaf = "workspacesIn",  enabled = true, speed = 4, bezier = "slideCurve", style = "slide" })
+hl.animation({ leaf = "workspacesOut", enabled = true, speed = 4, bezier = "slideCurve", style = "slide" })
