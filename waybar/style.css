@@ -2,7 +2,10 @@
   font-family: "JetBrainsMono Nerd Font";
   font-size: 13px;
   border: none;
+  border-radius: 0;
   min-height: 0;
+  box-shadow: none;
+  text-shadow: none;
 }
 
 window#waybar {
@@ -10,22 +13,48 @@ window#waybar {
   color: #cdd6f4;
 }
 
-.modules-left, .modules-center, .modules-right {
+/* cada contenedor es una pastilla */
+#custom-search, #custom-arch, #workspaces,
+#info, #taskbar, #status, #power {
   background: rgba(30, 30, 46, 0.85);
   border-radius: 12px;
-  padding: 0 6px;
-}
-
-#workspaces button {
   padding: 0 8px;
+  margin: 0 4px;
+}
+
+/* módulos dentro de las pastillas */
+#clock, #custom-weather, #language, #network,
+#pulseaudio, #battery, #custom-settings, #custom-power {
+  padding: 0 8px;
+}
+
+#custom-search, #custom-arch { padding: 0 12px; font-size: 16px; color: #89b4fa; }
+
+/* workspaces con animación */
+#workspaces button {
+  padding: 0 9px;
+  margin: 4px 2px;
+  border-radius: 8px;
   color: #6c7086;
+  background: transparent;
+  transition: all 0.3s ease;
 }
+#workspaces button:hover { background: #313244; color: #cdd6f4; }
+#workspaces button.active { background: #89b4fa; color: #1e1e2e; }
 
-#workspaces button.active {
-  color: #89b4fa;
-  border-bottom: 2px solid #89b4fa;
+/* apps abiertas */
+#taskbar button {
+  padding: 0 6px;
+  margin: 4px 2px;
+  border-radius: 8px;
+  background: transparent;
+  transition: all 0.3s ease;
 }
+#taskbar button:hover { background: #313244; }
+#taskbar button.active { background: #45475a; }
 
-#clock, #battery, #network, #pulseaudio, #tray, #cpu, #memory {
-  padding: 0 10px;
-} 
+/* estados */
+#battery.warning  { color: #f9e2af; }
+#battery.critical { color: #f38ba8; }
+#pulseaudio.muted { color: #6c7086; }
+#custom-power     { color: #f38ba8; }
