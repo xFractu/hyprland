@@ -86,7 +86,13 @@
 
   "group/power": {
     "orientation": "horizontal",
-    "modules": ["custom/settings", "custom/power"]
+    "modules": ["custom/theme","custom/settings", "custom/power"]
+  },
+
+  "custom/theme": {
+    "format": "\udb80\udfd8",
+    "tooltip": false,
+    "on-click": "~/.config/theme/theme.sh menu"
   },
 
   "custom/settings": {

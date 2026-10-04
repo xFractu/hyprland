@@ -35,6 +35,7 @@ hl.monitor({
 ---------------------
 
 -- Set programs that you use
+local theme = require("colors")
 local terminal    = "kitty"
 local fileManager = "kitty yazi"
 local menu = "wofi"
@@ -55,6 +56,7 @@ hl.on("hyprland.start", function ()
 --   hl.exec_cmd("nm-applet")
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
    hl.exec_cmd("hyprpaper")
+   hl.exec_cmd(os.getenv("HOME") .. "/.config/theme/theme.sh init")
    hl.exec_cmd("waybar")
 end)
 
@@ -101,9 +103,9 @@ hl.config({
         border_size = 2,
 
         col = {
-	   active_border   = { colors = {"rgb(89b4fa)", "rgb(cba6f7)"}, angle = 45 },
-    	   inactive_border = "rgb(45475a)",
-	},
+          active_border   = { colors = { theme.accent, theme.accent2 }, angle = 45 },
+          inactive_border = theme.inactive,
+        },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false,

@@ -1,3 +1,4 @@
+@import "colors.css";
 * {
   font-family: "JetBrainsMono Nerd Font";
   font-size: 13px;
@@ -10,13 +11,13 @@
 
 window#waybar {
   background: transparent;
-  color: #cdd6f4;
+  color: @text;
 }
 
 /* cada contenedor es una pastilla */
 #custom-search, #custom-arch, #workspaces,
 #info, #taskbar, #status, #power {
-  background: rgba(30, 30, 46, 0.85);
+  background: alpha(@bg, 0.85);
   border-radius: 12px;
   padding: 0 8px;
   margin: 0 4px;
@@ -29,7 +30,7 @@ window#waybar {
 }
 
 #custom-search, #custom-arch {
-  color: #89b4fa;
+  color: @accent;
   font-size: 18px;
   padding: 0 14px;
 }
@@ -43,12 +44,12 @@ window#waybar {
   padding: 0 9px;
   margin: 4px 2px;
   border-radius: 8px;
-  color: #6c7086;
+  color: @muted;
   background: transparent;
   transition: all 0.3s ease;
 }
-#workspaces button:hover { background: #313244; color: #cdd6f4; }
-#workspaces button.active { background: #89b4fa; color: #1e1e2e; }
+#workspaces button:hover { background: @surface; color: @text; }
+#workspaces button.active { background: @accent; color: @bg; }
 
 /* apps abiertas */
 #taskbar button {
@@ -58,11 +59,11 @@ window#waybar {
   background: transparent;
   transition: all 0.3s ease;
 }
-#taskbar button:hover { background: #313244; }
-#taskbar button.active { background: #45475a; }
+#taskbar button:hover { background: @surface; }
+#taskbar button.active { background: @surface2; }
 
 /* estados */
-#battery.warning  { color: #f9e2af; }
-#battery.critical { color: #f38ba8; }
-#pulseaudio.muted { color: #6c7086; }
-#custom-power     { color: #f38ba8; }
+#battery.warning  { color: @yellow; }
+#battery.critical { color: @red; }
+#pulseaudio.muted { color: @muted; }
+#custom-power     { color: @red; }
