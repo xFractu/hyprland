@@ -7,7 +7,7 @@
   "margin-left": 10,
   "margin-right": 10,
 
-  "modules-left": ["custom/search", "custom/arch", "hyprland/workspaces"],
+  "modules-left": ["custom/arch", "custom/search", "hyprland/workspaces"],
   "modules-center": ["group/info", "wlr/taskbar"],
   "modules-right": ["group/status", "group/power"],
 
@@ -18,7 +18,7 @@
   },
 
   "custom/arch": {
-    "format": "",
+    "format": "\udb82\udcc7",
     "tooltip": false
   },
 
@@ -90,7 +90,7 @@
   },
 
   "custom/settings": {
-    "format": "",
+    "format": "\uf013",
     "tooltip": false,
     "on-click": "kitty nvim ~/.config/hypr/hyprland.lua"
   },

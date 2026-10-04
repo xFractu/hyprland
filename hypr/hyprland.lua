@@ -49,7 +49,8 @@ local menu = "wofi"
 -- Autostart necessary processes (like notifications daemons, status bars, etc.)
 -- Or execute your favorite apps at launch like this:
 --
-hl.on("hyprland.start", function () 
+hl.on("hyprland.start", function ()
+  hl.exec_cmd("hyprlock")
 --   hl.exec_cmd(terminal)
 --   hl.exec_cmd("nm-applet")
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
@@ -289,6 +290,8 @@ hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("thunar"))
 
 -- Editor en terminal
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("kitty nvim"))
+
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
