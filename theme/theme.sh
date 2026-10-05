@@ -75,6 +75,7 @@ CONF
   # neovim
   echo "catppuccin-${flavor,,}" > "$THEME_DIR/nvim-colorscheme"
 "$THEME_DIR/lock-theme.sh"
+"$THEME_DIR/tui-theme.sh"
 
   hyprctl reload > /dev/null 2>&1
   pkill -SIGUSR2 waybar

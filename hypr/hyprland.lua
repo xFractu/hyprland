@@ -397,3 +397,22 @@ hl.curve("slideCurve", { type = "bezier", points = { {0.25, 1}, {0.5, 1} } })
 hl.animation({ leaf = "workspaces",    enabled = true, speed = 4, bezier = "slideCurve", style = "slide" })
 hl.animation({ leaf = "workspacesIn",  enabled = true, speed = 4, bezier = "slideCurve", style = "slide" })
 hl.animation({ leaf = "workspacesOut", enabled = true, speed = 4, bezier = "slideCurve", style = "slide" })
+
+-- terminales con estilo
+
+-- terminales con estilo (pasan por el lanzador de tema)
+hl.bind(mainMod .. " + ALT + B", hl.dsp.exec_cmd("/home/fractu/.config/theme/tui.sh btop btop"))
+hl.bind(mainMod .. " + ALT + H", hl.dsp.exec_cmd("/home/fractu/.config/theme/tui.sh htop htop"))
+hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd("/home/fractu/.config/theme/tui.sh cava cava"))
+hl.bind(mainMod .. " + ALT + M", hl.dsp.exec_cmd("/home/fractu/.config/theme/tui.sh cmatrix cmatrix -b"))
+hl.bind(mainMod .. " + ALT + P", hl.dsp.exec_cmd("/home/fractu/.config/theme/tui.sh pipes pipes.sh"))
+hl.bind(mainMod .. " + ALT + T", hl.dsp.exec_cmd("/home/fractu/.config/theme/tui.sh clock tty-clock -sc -C 2"))
+hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd("/home/fractu/.config/theme/tui.sh lavat lavat -c green -k blue"))
+hl.bind(mainMod .. " + ALT + F", hl.dsp.exec_cmd("/home/fractu/.config/theme/tui.sh fetch --hold fastfetch"))
+
+-- fastfetch (pasa por el lanzador de tema, misma opacidad que btop)
+
+-- fastfetch persistente (terminal interactiva, misma opacidad que btop)
+
+-- fastfetch persistente (terminal con imagen, misma opacidad que btop)
+hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("env FETCH_CFG=image /home/fractu/.config/theme/tui.sh fetch"))
