@@ -1,0 +1,111 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "height": 36,
+  "margin-top": 6,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "modules-left": ["custom/arch", "custom/search", "niri/workspaces"],
+  "modules-center": ["group/info", "wlr/taskbar"],
+  "modules-right": ["group/status", "group/power"],
+
+  "custom/search": {
+    "format": "󰍉",
+    "tooltip": false,
+    "on-click": "wofi --show drun"
+  },
+
+  "custom/arch": {
+    "format": "\udb82\udcc7",
+    "tooltip": false
+  },
+
+  "niri/workspaces": {
+    "format": "{index}",
+    "on-click": "activate",
+    "enable-bar-scroll": true,
+    "all-outputs": true,
+    "persistent-workspaces": { "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] }
+  },
+
+  "group/info": {
+    "orientation": "horizontal",
+    "modules": ["clock", "custom/weather"]
+  },
+
+  "clock": {
+    "format": "{:%H:%M  󰃭 %a %d %b}",
+    "tooltip-format": "<tt>{calendar}</tt>"
+  },
+
+  "custom/weather": {
+    "exec": "curl -sf --max-time 5 'wttr.in/?format=%c+%t' | sed 's/+//g'",
+    "interval": 900,
+    "format": "{}"
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close"
+  },
+
+  "group/status": {
+    "orientation": "horizontal",
+    "modules": ["niri/language", "network", "pulseaudio", "battery"]
+  },
+
+  "niri/language": {
+    "format": "󰌌 {short}",
+    "on-click": "hyprctl switchxkblayout all next"
+  },
+
+  "network": {
+    "format-wifi": "󰤨 {signalStrength}%",
+    "format-ethernet": "󰈀",
+    "format-disconnected": "󰤭",
+    "tooltip-format": "{essid} {ipaddr}"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": { "default": ["󰕿", "󰖀", "󰕾"] },
+    "on-click": "pavucontrol"
+  },
+
+  "battery": {
+    "states": { "warning": 30, "critical": 15 },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  },
+
+  "group/power": {
+    "orientation": "horizontal",
+    "modules": ["custom/theme","custom/settings", "custom/power"]
+  },
+
+  "custom/theme": {
+    "format": "\udb80\udfd8",
+    "tooltip": false,
+    "on-click": "~/.config/theme/theme.sh menu"
+  },
+
+  "custom/settings": {
+    "format": "\uf013",
+    "tooltip": false,
+    "on-click": "kitty nvim ~/.config/hypr/hyprland.lua"
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/power-menu.sh"
+  }
+}
+
