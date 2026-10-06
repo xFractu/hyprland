@@ -159,7 +159,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
+        width 2
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -349,6 +349,7 @@ window-rule {
 }
 
 binds {
+    Mod+Alt+F { toggle-windowed-fullscreen; }
     Mod+B { spawn "firefox"; }
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
@@ -661,4 +662,18 @@ window-rule {
 window-rule {
     match app-id=r#"^tui-"#
     opacity 1.0
+}
+
+
+
+// ancho por defecto: la mitad de la pantalla
+window-rule {
+    open-maximized false
+    default-column-width { proportion 0.5; }
+}
+
+// kitty no se abre maximizada a los bordes
+window-rule {
+    match app-id=r#"^kitty$"#
+    open-maximized-to-edges false
 }
