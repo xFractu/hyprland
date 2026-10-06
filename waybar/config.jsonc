@@ -93,7 +93,7 @@
   "custom/theme": {
     "format": "\udb80\udfd8",
     "tooltip": false,
-    "on-click": "~/.config/theme/theme.sh menu"
+    "on-click": "setsid ~/.config/theme/theme.sh menu"
   },
 
   "custom/settings": {

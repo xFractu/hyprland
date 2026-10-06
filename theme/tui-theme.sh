@@ -43,3 +43,25 @@ theme[upload_start]="#$hex"
 theme[upload_mid]="#$second"
 theme[upload_end]="#$red"
 CONF
+
+# cava: degradado con la paleta (bajo = gris oscuro, medio = acento, alto = texto)
+mix() {
+  local a=$1 b=$2 i=$3 n=$4
+  printf '%02x%02x%02x' \
+    $(( (0x${a:0:2} * (n-i) + 0x${b:0:2} * i) / n )) \
+    $(( (0x${a:2:2} * (n-i) + 0x${b:2:2} * i) / n )) \
+    $(( (0x${a:4:2} * (n-i) + 0x${b:4:2} * i) / n ))
+}
+
+CAVA_CFG="$HOME/.config/cava/config"
+if [ -f "$CAVA_CFG" ]; then
+  sed -i -E "s/^;? *gradient *=.*/gradient = 1/" "$CAVA_CFG"
+  for i in 1 2 3 4 5 6 7 8; do
+    if [ "$i" -le 4 ]; then
+      col=$(mix "$muted" "$hex" $((i-1)) 3)
+    else
+      col=$(mix "$hex" "$text" $((i-4)) 4)
+    fi
+    sed -i -E "s/^;? *gradient_color_$i *=.*/gradient_color_$i = '#$col'/" "$CAVA_CFG"
+  done
+fi

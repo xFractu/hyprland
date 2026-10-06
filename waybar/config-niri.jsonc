@@ -14,7 +14,7 @@
   "custom/search": {
     "format": "󰍉",
     "tooltip": false,
-    "on-click": "wofi --show drun"
+    "on-click": "fuzzel"
   },
 
   "custom/arch": {
@@ -61,7 +61,7 @@
 
   "niri/language": {
     "format": "󰌌 {short}",
-    "on-click": "hyprctl switchxkblayout all next"
+    "on-click": "niri msg action switch-layout next"
   },
 
   "network": {
@@ -93,13 +93,13 @@
   "custom/theme": {
     "format": "\udb80\udfd8",
     "tooltip": false,
-    "on-click": "~/.config/theme/theme.sh menu"
+    "on-click": "setsid ~/.config/theme/theme.sh menu"
   },
 
   "custom/settings": {
     "format": "\uf013",
     "tooltip": false,
-    "on-click": "kitty nvim ~/.config/hypr/hyprland.lua"
+    "on-click": "kitty nvim ~/.config/niri/config.kdl"
   },
 
   "custom/power": {

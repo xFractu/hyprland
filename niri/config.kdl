@@ -9,6 +9,7 @@
 input {
     keyboard {
         xkb {
+            layout "latam"
             // You can set rules, model, layout, variant and options.
             // For more information, see xkeyboard-config(7).
 
@@ -167,7 +168,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#f5f5f5"
+        active-color "#c4c4c4"
 
         // Color of the ring on inactive monitors.
         //
@@ -198,7 +199,7 @@ layout {
         off
 
         width 4
-        active-color "#f5f5f5"
+        active-color "#c4c4c4"
         inactive-color "#505050"
 
         // Color of the border around windows that request your attention.
@@ -349,6 +350,19 @@ window-rule {
 }
 
 binds {
+    Mod+L { spawn "hyprlock"; }
+    Ctrl+Alt+T { spawn "kitty"; }
+
+    // terminales con estilo
+    Mod+Alt+B { spawn "/home/fractu/.config/theme/tui.sh" "btop" "btop"; }
+    Mod+Alt+H { spawn "/home/fractu/.config/theme/tui.sh" "htop" "htop"; }
+    Mod+Alt+C { spawn "/home/fractu/.config/theme/tui.sh" "cava" "cava"; }
+    Mod+Alt+M { spawn "/home/fractu/.config/theme/tui.sh" "cmatrix" "cmatrix" "-b"; }
+    Mod+Alt+P { spawn "/home/fractu/.config/theme/tui.sh" "pipes" "pipes.sh"; }
+    Mod+Alt+T { spawn "/home/fractu/.config/theme/tui.sh" "clock" "tty-clock" "-sc" "-C" "2"; }
+    Mod+Alt+V { spawn "/home/fractu/.config/theme/tui.sh" "lavat" "lavat" "-c" "green" "-k" "blue"; }
+
+    // terminal con fastfetch e imagen (persistente con clear)
     Mod+Alt+F { toggle-windowed-fullscreen; }
     Mod+B { spawn "firefox"; }
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -366,9 +380,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "kitty"; }
+    Mod+T hotkey-overlay-title="Terminal con fastfetch e imagen" { spawn "env" "FETCH_CFG=image" "/home/fractu/.config/theme/tui.sh" "fetch"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -411,7 +424,7 @@ binds {
     Mod+H     { focus-column-left; }
     Mod+J     { focus-window-down; }
     Mod+K     { focus-window-up; }
-    Mod+L     { focus-column-right; }
+    Mod+Alt+L     { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-window-down; }
