@@ -23,7 +23,7 @@
   },
 
   "niri/workspaces": {
-    "format": "{index}",
+    "format": "",
     "on-click": "activate",
     "enable-bar-scroll": true,
     "all-outputs": true,
