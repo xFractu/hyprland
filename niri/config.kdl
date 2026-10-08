@@ -352,6 +352,10 @@ window-rule {
 
 binds {
 
+    // explorador de archivos
+    Mod+E hotkey-overlay-title="Explorador de archivos" { spawn "nautilus"; }
+    Mod+Alt+E hotkey-overlay-title="Yazi" { spawn "kitty" "-o" "confirm_os_window_close=0" "yazi"; }
+
     // mover ventanas con las flechas
     Mod+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Right { move-column-right; }
@@ -374,7 +378,7 @@ binds {
     Mod+Alt+B { spawn "/home/fractu/.config/theme/tui.sh" "btop" "btop"; }
     Mod+Alt+H { spawn "/home/fractu/.config/theme/tui.sh" "htop" "htop"; }
     Mod+Alt+C { spawn "/home/fractu/.config/theme/tui.sh" "cava" "cava"; }
-    Mod+Alt+M { spawn "/home/fractu/.config/theme/tui.sh" "cmatrix" "cmatrix" "-b"; }
+    Mod+Alt+M { spawn "/home/fractu/.config/theme/tui.sh" "cmatrix" "cmatrix" "-b" "-C" "green"; }
     Mod+Alt+P { spawn "/home/fractu/.config/theme/tui.sh" "pipes" "pipes.sh"; }
     Mod+Alt+T { spawn "/home/fractu/.config/theme/tui.sh" "clock" "tty-clock" "-sc" "-C" "2"; }
     Mod+Alt+V { spawn "/home/fractu/.config/theme/tui.sh" "lavat" "lavat" "-c" "green" "-k" "blue"; }
@@ -666,7 +670,7 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
     draw-border-with-background false
-    opacity 0.5
+    opacity 0.9
 }
 
 window-rule {
@@ -724,3 +728,21 @@ window-rule {
     draw-border-with-background false
 }
 prefer-no-csd
+
+// kitty normal: negra sólida con foco
+window-rule {
+    match app-id=r#"^kitty$"# is-focused=true
+    opacity 1.0
+}
+
+// kitty normal: sólida con foco
+window-rule {
+    match app-id=r#"^kitty$"# is-focused=true
+    opacity 1.0
+}
+
+// terminales con estilo: se vuelven más transparentes al perder el foco
+window-rule {
+    match app-id=r#"^tui-fetch$"# is-focused=false
+    opacity 0.8
+}
