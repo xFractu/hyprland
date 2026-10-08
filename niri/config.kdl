@@ -111,6 +111,7 @@ input {
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Layout
 layout {
+    background-color "transparent"
     // Set gaps around windows in logical pixels.
     gaps 16
 
@@ -743,6 +744,18 @@ window-rule {
 
 // terminales con estilo: se vuelven más transparentes al perder el foco
 window-rule {
-    match app-id=r#"^tui-fetch$"# is-focused=false
-    opacity 0.8
+    match app-id=r#"^tui-"# is-focused=false
+    opacity 0.7
+}
+
+overview {
+    workspace-shadow {
+        off
+    }
+}
+
+// wallpaper fijo detrás de todos los escritorios (también en la vista general)
+layer-rule {
+    match namespace="^noctalia-wallpaper"
+    place-within-backdrop true
 }
