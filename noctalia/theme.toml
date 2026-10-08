@@ -1,8 +1,8 @@
 [theme]
 mode            = "dark"
-source          = "builtin"
-builtin         = "Noctalia"
-pure_black_dark = true
+source          = "custom"
+custom_palette  = "BlancoGris"
+pure_black_dark = false
 
 [theme.templates]
 enable_builtin_templates = true

@@ -733,13 +733,13 @@ prefer-no-csd
 // kitty normal: negra sólida con foco
 window-rule {
     match app-id=r#"^kitty$"# is-focused=true
-    opacity 1.0
+    opacity 0.85
 }
 
 // kitty normal: sólida con foco
 window-rule {
     match app-id=r#"^kitty$"# is-focused=true
-    opacity 1.0
+    opacity 0.85
 }
 
 // terminales con estilo: se vuelven más transparentes al perder el foco
