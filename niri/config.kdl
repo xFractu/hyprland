@@ -270,9 +270,9 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "hyprlock"
-spawn-at-startup "waybar" "-c" "/home/fractu/.config/waybar/config-niri.jsonc"
-spawn-at-startup "hyprpaper"
-spawn-at-startup "mako"
+// spawn-at-startup "waybar" "-c" "/home/fractu/.config/waybar/config-niri.jsonc"
+// spawn-at-startup "hyprpaper"
+// spawn-at-startup "mako"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -703,3 +703,24 @@ window-rule {
     match app-id=r#"^kitty$"#
     open-maximized-to-edges false
 }
+
+// Noctalia: barra, notificaciones, fondos y panel de control
+spawn-at-startup "noctalia"
+
+// su ventana de ajustes, flotante (va al final para pisar la regla de media pantalla)
+window-rule {
+    match app-id="dev.noctalia.Noctalia.Settings"
+    open-floating true
+    default-column-width { fixed 1080; }
+    default-window-height { fixed 920; }
+}
+
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
+// el borde del foco no se dibuja detrás de las ventanas semitransparentes
+window-rule {
+    draw-border-with-background false
+}
+prefer-no-csd

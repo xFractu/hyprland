@@ -37,7 +37,7 @@ hl.monitor({
 -- Set programs that you use
 local theme = require("colors")
 local terminal    = "kitty"
-local fileManager = "kitty yazi"
+local fileManager = "kitty -o confirm_os_window_close=0 yazi"
 local menu = "wofi"
 
 
@@ -416,3 +416,10 @@ hl.bind(mainMod .. " + ALT + F", hl.dsp.exec_cmd("/home/fractu/.config/theme/tui
 
 -- fastfetch persistente (terminal con imagen, misma opacidad que btop)
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd("env FETCH_CFG=image /home/fractu/.config/theme/tui.sh fetch"))
+
+-- las terminales con estilo usan solo la opacidad de kitty
+hl.window_rule({
+    name  = "tui-sin-doble-opacidad",
+    match = { class = "^tui-" },
+    opacity = "1.0 1.0",
+})

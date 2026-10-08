@@ -1,1 +1,1 @@
-return { accent = "rgb(89b4fa)", accent2 = "rgb(b7bdf8)", inactive = "rgb(494d64)" }
+return { accent = "rgb(c4c4c4)", accent2 = "rgb(a8a8a8)", inactive = "rgb(2e2e2e)" }

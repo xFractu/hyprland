@@ -1,0 +1,9 @@
+[theme]
+mode            = "dark"
+source          = "builtin"
+builtin         = "Noctalia"
+pure_black_dark = true
+
+[theme.templates]
+enable_builtin_templates = true
+builtin_ids              = ["kitty"]
