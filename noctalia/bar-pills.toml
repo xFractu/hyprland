@@ -17,9 +17,9 @@ capsule_radius     = 14
 capsule_thickness  = 0.9
 capsule_padding    = 14
 
-start  = ["arch", "group:tools", "workspaces"]
+start  = ["arch", "group:tools", "workspaces", "media"]
 center = ["clock"]
-end    = ["media", "group:status"]
+end    = ["group:apps", "group:status"]
 
 [[bar.default.capsule_group]]
 id             = "tools"
@@ -54,3 +54,37 @@ control_center_placement = "floating"
 wallpaper_placement      = "floating"
 session_placement        = "floating"
 floating_offset          = 8
+
+# aplicaciones abiertas: un solo icono por app
+[widget.taskbar]
+group_by_workspace        = true
+group_single_icon_per_app = true
+show_workspace_label      = false
+workspace_group_capsule   = false
+show_active_indicator     = true
+
+# clic derecho sobre las aplicaciones: selector de ventanas con vista previa
+[widget.taskbar.actions]
+right = "window-switcher"
+
+[shell.window_switcher]
+style                  = "compact"
+current_workspace_only = false
+
+# botón que abre el selector de ventanas con clic izquierdo
+[widget.switcher]
+type    = "custom_button"
+glyph   = "layout-grid"
+tooltip = "Ventanas abiertas"
+
+[widget.switcher.actions]
+left = "window-switcher"
+
+[[bar.default.capsule_group]]
+id             = "apps"
+members        = ["taskbar", "switcher"]
+fill           = "surface_variant"
+opacity        = 0.6
+radius         = 14
+padding        = 14
+widget_spacing = 12
