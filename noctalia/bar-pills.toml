@@ -18,7 +18,7 @@ capsule_thickness  = 0.9
 capsule_padding    = 14
 
 start  = ["arch", "group:tools", "workspaces", "media"]
-center = ["clock"]
+center = ["group:info"]
 end    = ["group:apps", "group:status"]
 
 [[bar.default.capsule_group]]
@@ -43,10 +43,6 @@ widget_spacing = 12
 [widget.arch]
 capsule_padding = 9
 
-# hora más ancha
-[widget.clock]
-capsule_padding = 28
-
 # paneles flotantes
 [shell.panel]
 transparency_mode      = "soft"
@@ -57,6 +53,7 @@ floating_offset          = 8
 
 # aplicaciones abiertas: un solo icono por app
 [widget.taskbar]
+only_active_workspace = true
 group_by_workspace        = true
 group_single_icon_per_app = true
 show_workspace_label      = false
@@ -69,7 +66,7 @@ right = "window-switcher"
 
 [shell.window_switcher]
 style                  = "compact"
-current_workspace_only = false
+current_workspace_only = true
 
 # botón que abre el selector de ventanas con clic izquierdo
 [widget.switcher]
@@ -88,3 +85,29 @@ opacity        = 0.6
 radius         = 14
 padding        = 14
 widget_spacing = 12
+
+# hora, fecha y clima en una sola pastilla
+[widget.clock]
+format         = "{:%H:%M}   {:%A %d %B}"
+tooltip_format = "{:%A, %d de %B de %Y}"
+
+[widget.weather]
+show_condition   = false
+show_temperature = true
+
+[[bar.default.capsule_group]]
+id             = "info"
+members        = ["clock", "weather"]
+fill           = "surface_variant"
+opacity        = 0.6
+radius         = 14
+padding        = 20
+widget_spacing = 14
+
+# datos del clima en grados Celsius
+[weather]
+enabled = true
+unit    = "metric"
+
+[location]
+auto_locate = true
