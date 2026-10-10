@@ -5,7 +5,7 @@ start = ["arch", "launcher", "wallpaper", "workspaces"]
 type    = "custom_button"
 custom_image = "/home/fractu/.config/noctalia/icons/arch.svg"
 custom_image_colorize = true
-tooltip = "Arch Linux"
+tooltip = "Centro de control"
 
 [widget.arch.actions]
-left = "panel-toggle launcher"
+left = "panel-toggle control-center"

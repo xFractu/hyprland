@@ -1,0 +1,56 @@
+[bar.default]
+position           = "top"
+thickness          = 40
+margin_edge        = 6
+margin_ends        = 14
+padding            = 0
+widget_spacing     = 10
+reserve_space      = true
+background_opacity = 0.01
+shadow             = false
+compositor_blur    = false
+
+capsule            = true
+capsule_fill       = "surface_variant"
+capsule_opacity    =  0.6
+capsule_radius     = 14
+capsule_thickness  = 0.9
+capsule_padding    = 14
+
+start  = ["arch", "group:tools", "workspaces"]
+center = ["clock"]
+end    = ["media", "group:status"]
+
+[[bar.default.capsule_group]]
+id             = "tools"
+members        = ["launcher", "wallpaper"]
+fill           = "surface_variant"
+opacity        =  0.6
+radius         = 14
+padding        = 14
+widget_spacing = 12
+
+[[bar.default.capsule_group]]
+id             = "status"
+members        = ["tray", "notifications", "clipboard", "network", "volume", "session"]
+fill           = "surface_variant"
+opacity        =  0.6
+radius         = 14
+padding        = 14
+widget_spacing = 12
+
+# logo de Arch: pastilla cuadrada
+[widget.arch]
+capsule_padding = 9
+
+# hora más ancha
+[widget.clock]
+capsule_padding = 28
+
+# paneles flotantes
+[shell.panel]
+transparency_mode      = "soft"
+control_center_placement = "floating"
+wallpaper_placement      = "floating"
+session_placement        = "floating"
+floating_offset          = 8
