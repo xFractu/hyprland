@@ -157,11 +157,12 @@ layout {
 
     // You can change how the focus ring looks.
     focus-ring {
+        off
         // Uncomment this line to disable the focus ring.
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 2
+        width 1
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -169,7 +170,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#c4c4c4"
+        active-color "#555555"
 
         // Color of the ring on inactive monitors.
         //
@@ -487,6 +488,8 @@ window-rule {
 }
 
 binds {
+    Mod+Alt+D hotkey-overlay-title="Ir a deco" { focus-workspace "deco"; }
+    Mod+Tab hotkey-overlay-title="Selector de ventanas" { spawn-sh "noctalia msg window-switcher"; }
 
     // explorador de archivos
     Mod+E hotkey-overlay-title="Explorador de archivos" { spawn "nautilus"; }
@@ -538,7 +541,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Terminal con fastfetch e imagen" { spawn "env" "FETCH_CFG=image" "/home/fractu/.config/theme/tui.sh" "fetch"; }
-    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn-sh "noctalia msg panel-toggle launcher"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -895,3 +898,18 @@ layer-rule {
     place-within-backdrop true
 }
 
+
+// escritorio fijo para las terminales decorativas
+workspace "deco"
+
+window-rule {
+    match app-id=r#"^tui-(btop|cava|cmatrix|clock)$"#
+    open-on-workspace "deco"
+}
+
+// sin esquinas activas: la vista general solo con Super+O
+gestures {
+    hot-corners {
+        off
+    }
+}
