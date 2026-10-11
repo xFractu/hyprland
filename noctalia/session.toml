@@ -1,0 +1,17 @@
+# menú de apagado: el bloqueo usa hyprlock
+[[shell.session.actions]]
+action  = "lock"
+command = "pidof hyprlock || hyprlock"
+
+[[shell.session.actions]]
+action = "logout"
+
+[[shell.session.actions]]
+action  = "lock_and_suspend"
+command = "pidof hyprlock || hyprlock & sleep 1; systemctl suspend"
+
+[[shell.session.actions]]
+action = "reboot"
+
+[[shell.session.actions]]
+action = "shutdown"
