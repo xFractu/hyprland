@@ -13,8 +13,11 @@ case "$name" in
   cava|cmatrix|pipes|lavat|clock) op=$OP_ANIM ;;
   *) op=$OP_FETCH ;;
 esac
+DECO=""; [ "$name" != "fetch" ] && DECO="-o hide_window_decorations=titlebar-only"
 exec kitty --class "tui-$name" \
   -o confirm_os_window_close=0 \
+  $DECO \
+  --title " " \
   -o "background=#$base" \
   -o "color0=#$base" \
   -o background_opacity=$op \
