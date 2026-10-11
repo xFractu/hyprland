@@ -488,6 +488,7 @@ window-rule {
 }
 
 binds {
+    Mod+V hotkey-overlay-title="Portapapeles" { spawn-sh "noctalia msg panel-toggle clipboard"; }
     Mod+Alt+D hotkey-overlay-title="Ir a deco" { focus-workspace "deco"; }
     Mod+Tab hotkey-overlay-title="Selector de ventanas" { spawn-sh "noctalia msg window-switcher"; }
 
@@ -765,7 +766,7 @@ binds {
     Mod+Shift+Equal { set-window-height "+10%"; }
 
     // Move the focused window between the floating and the tiling layout.
-    Mod+V       { toggle-window-floating; }
+    Mod+Ctrl+V       { toggle-window-floating; }
     Mod+Shift+V { switch-focus-between-floating-and-tiling; }
 
     // Toggle tabbed column display mode.
@@ -866,7 +867,6 @@ debug {
 window-rule {
     draw-border-with-background false
 }
-prefer-no-csd
 
 // kitty normal: negra sólida con foco
 window-rule {
@@ -903,7 +903,7 @@ layer-rule {
 workspace "deco"
 
 window-rule {
-    match app-id=r#"^tui-(btop|cava|cmatrix|clock)$"#
+    match app-id=r#"^tui-(btop|cava|cmatrix|clock|lavat|pipes)$"#
     open-on-workspace "deco"
 }
 
