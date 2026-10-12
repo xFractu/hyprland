@@ -157,6 +157,7 @@ layout {
 
     // You can change how the focus ring looks.
     focus-ring {
+        off
         // Uncomment this line to disable the focus ring.
         // off
 
@@ -197,10 +198,9 @@ layout {
     border {
         // The settings are the same as for the focus ring.
         // If you enable the border, you probably want to disable the focus ring.
-        off
 
-        width 4
-        active-color "#c4c4c4"
+        width 1
+        active-color "#505050"
         inactive-color "#505050"
 
         // Color of the border around windows that request your attention.
