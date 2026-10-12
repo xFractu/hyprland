@@ -1,6 +1,6 @@
 [bar.default]
 position           = "top"
-thickness          = 40
+thickness          = 32
 margin_edge        = 10
 margin_ends        = 10
 padding            = 0
