@@ -487,6 +487,7 @@ window-rule {
 }
 
 binds {
+    Mod+Alt+W hotkey-overlay-title="Alternar fondo animado/normal" { spawn "/home/fractu/.config/theme/fondo.sh"; }
     Mod+V hotkey-overlay-title="Portapapeles" { spawn-sh "noctalia msg panel-toggle clipboard"; }
     Mod+Alt+D hotkey-overlay-title="Ir a deco" { focus-workspace "deco"; }
     Mod+Tab hotkey-overlay-title="Selector de ventanas" { spawn-sh "noctalia msg window-switcher"; }
@@ -912,3 +913,19 @@ gestures {
         off
     }
 }
+
+// fondo animado (mpvpaper) fijo detrás de los escritorios
+layer-rule {
+    match namespace="^mpvpaper"
+    place-within-backdrop true
+}
+
+spawn-at-startup "/home/fractu/.config/theme/fondo.sh" "init"
+
+// fondo animado (mpvpaper) fijo detrás de los escritorios
+layer-rule {
+    match namespace="^mpvpaper"
+    place-within-backdrop true
+}
+
+spawn-at-startup "/home/fractu/.config/theme/fondo.sh" "init"
