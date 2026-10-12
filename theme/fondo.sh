@@ -1,6 +1,6 @@
 #!/bin/bash
 # uso: fondo.sh [animado|normal|toggle|init]
-VIDEO="$HOME/Videos/wallpapers/berserk.mp4"
+VIDEO="$HOME/Videos/wallpapers/espada.mp4"
 CFG="$HOME/.config/noctalia/fondo-animado.toml"
 STATE="$HOME/.local/state/fondo-modo"
 ULTIMO="$HOME/.local/state/fondo-ultimo"

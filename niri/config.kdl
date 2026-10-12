@@ -880,11 +880,6 @@ window-rule {
     opacity 0.85
 }
 
-// terminales con estilo: se vuelven más transparentes al perder el foco
-window-rule {
-    match app-id=r#"^tui-"# is-focused=false
-    opacity 0.7
-}
 
 overview {
     workspace-shadow {
@@ -922,10 +917,9 @@ layer-rule {
 
 spawn-at-startup "/home/fractu/.config/theme/fondo.sh" "init"
 
-// fondo animado (mpvpaper) fijo detrás de los escritorios
-layer-rule {
-    match namespace="^mpvpaper"
-    place-within-backdrop true
-}
 
-spawn-at-startup "/home/fractu/.config/theme/fondo.sh" "init"
+// terminales con estilo: se vuelven más transparentes al perder el foco
+window-rule {
+    match app-id=r#"^tui-"# is-focused=false
+    opacity 0.8
+}
