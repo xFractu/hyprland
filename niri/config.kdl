@@ -157,7 +157,6 @@ layout {
 
     // You can change how the focus ring looks.
     focus-ring {
-        off
         // Uncomment this line to disable the focus ring.
         // off
 
@@ -170,7 +169,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#555555"
+        active-color "#ffffff"
 
         // Color of the ring on inactive monitors.
         //
