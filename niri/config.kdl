@@ -825,7 +825,7 @@ window-rule {
 
 window-rule {
     match app-id=r#"^firefox$"# is-focused=false
-    opacity 0.85
+    opacity 0.8
 }
 
 // las terminales con estilo usan solo la opacidad de kitty
