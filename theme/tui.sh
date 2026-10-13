@@ -1,7 +1,7 @@
 #!/bin/bash
 # uso: tui.sh nombre [opciones de kitty] comando [args]
 OP_FETCH=0.88    # terminales con estilo (menor = más transparente)
-OP_ANIM=0.6     # cava, cmatrix, pipes, lavat y reloj
+OP_ANIM=0.3     # cava, cmatrix, pipes, lavat y reloj
 BG_GRAY=""       # vacío = el negro del tema de Noctalia; o un gris, p. ej. 161616
 
 name="$1"; shift

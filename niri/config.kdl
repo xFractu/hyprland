@@ -923,3 +923,25 @@ window-rule {
     match app-id=r#"^tui-"# is-focused=false
     opacity 0.8
 }
+
+// blur detrás de las terminales decorativas
+window-rule {
+    match app-id=r#"^tui-"# is-focused=true
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+blur {
+    passes 2
+    offset 2.5
+}
+
+// terminales decorativas sin foco: sin blur
+window-rule {
+    match app-id=r#"^tui-"# is-focused=false
+    background-effect {
+        blur false
+    }
+}
