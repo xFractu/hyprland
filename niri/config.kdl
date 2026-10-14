@@ -871,13 +871,13 @@ window-rule {
 // kitty normal: negra sólida con foco
 window-rule {
     match app-id=r#"^kitty$"# is-focused=true
-    opacity 0.85
+    opacity 0.95
 }
 
 // kitty normal: sólida con foco
 window-rule {
     match app-id=r#"^kitty$"# is-focused=true
-    opacity 0.85
+    opacity 0.95
 }
 
 
@@ -941,6 +941,23 @@ blur {
 // terminales decorativas sin foco: sin blur
 window-rule {
     match app-id=r#"^tui-"# is-focused=false
+    background-effect {
+        blur false
+    }
+}
+
+// blur detrás de la terminal normal
+window-rule {
+    match app-id=r#"^kitty$"# is-focused=true
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+// terminal normal sin foco: sin blur
+window-rule {
+    match app-id=r#"^kitty$"# is-focused=false
     background-effect {
         blur false
     }
